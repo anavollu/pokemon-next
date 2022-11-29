@@ -24,3 +24,94 @@ a {
     background: black;
   }
 }
+
+/* Banner */
+.banner {
+  display: flex;
+  width: 100%;
+  padding-top: 80px;
+  padding-left: 160px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo-search-wrapper {
+  flex-grow: 1;
+}
+
+.search-wrapper {
+  margin-top: 61px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #F2F2F2;
+  box-sizing: border-box;
+  width: 644px;
+  height: 65px;
+  border: 1px solid #E3E1E1;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  border-radius: 50px;
+  margin-bottom: 54px;
+}
+
+.input-label {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 72px;
+  color: #212121;
+}
+
+.input-search {
+  background-color: #F2F2F2;
+  width: 567px;
+  height: 63px;
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.search-icon {
+  padding-left: 21px;
+}
+
+.pokemons-img {
+  width: 531px;
+  height: 267px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 124px;
+  background-color: #4F61C8;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 166px;
+  padding-right: 166px;
+}
+
+.linkedin-icon {
+  margin-right: 42px;
+  filter: brightness(0) invert(1);
+}
+
+.github-icon {
+  filter: brightness(0) invert(1);
+}
+
+.developed-by {
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
