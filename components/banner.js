@@ -19,8 +19,8 @@ export default function Banner() {
               className="search-icon"
               src={searchIcon}
               alt="Botão de pesquisar"
-              width={50}
-              height={50}
+              width="auto"
+              height="auto"
             />
           </div>
         </div>
@@ -32,6 +32,7 @@ export default function Banner() {
         alt="Imagem de Pokémons"
         width={531}
         height={267}
+        priority={true}
       />
     </div>
   );
