@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 import TypeItem from "./typeItem";
@@ -9,7 +8,7 @@ export default function Type(props) {
   const [pokemons, setPokemons] = useState([]);
   const router = useRouter();
 
-  async function getpokemons(type) {
+  async function getPokemons(type) {
     const typePokemons = await new Pokedex.Pokedex({
       cacheImages: true,
     }).getTypeByName(type);
@@ -21,7 +20,7 @@ export default function Type(props) {
   }
 
   useEffect(() => {
-    getpokemons(props.type).then(setPokemons);
+    getPokemons(props.type).then(setPokemons);
   }, [props.type]);
 
   return (
