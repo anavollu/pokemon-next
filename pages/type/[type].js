@@ -8,9 +8,6 @@ export default function TypeList(props) {
   const router = useRouter();
   const data = router.query;
 
-  console.log(data);
-  console.log(dataType);
-
   return (
     <div>
       {dataType.map((el) =>
