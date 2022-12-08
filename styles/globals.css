@@ -146,7 +146,9 @@ a {
 .pokemon-list {
   margin-top: 38.06px;
   display: flex;
+  justify-content: center;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .button {

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
+import Type from "../../components/type";
 
 import dataType from "../../public/typeColors";
 
@@ -7,14 +8,23 @@ export default function TypeList(props) {
   const router = useRouter();
   const data = router.query;
 
+  console.log(data);
+  console.log(dataType);
+
   return (
     <div>
-      <h1>{data.type} Type list</h1>
-      {props.pokemons.map((el) => (
-        <p>
-          #{el.number} {el.name}
-        </p>
-      ))}
+      {dataType.map((el) =>
+        el.type === data.type ? (
+          <Type
+            key={el.type}
+            type={el.type}
+            primaryColor={el.primary}
+            secondaryColor={el.secondary}
+          />
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 }

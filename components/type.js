@@ -36,17 +36,29 @@ export default function Type(props) {
         }}
       ></div>
       <div className="pokemon-list">
-        {pokemons.slice(0, 4).map(({ name, number }, i) => {
-          return (
-            <TypeItem
-              key={name + i}
-              primaryColor={props.primaryColor}
-              name={name}
-              number={number}
-            />
-          );
-        })}
-        {pokemons.length > 4 ? (
+        {props.firstPage
+          ? pokemons.slice(0, 5).map(({ name, number }, i) => {
+              return (
+                <TypeItem
+                  key={name + i}
+                  primaryColor={props.primaryColor}
+                  name={name}
+                  number={number}
+                />
+              );
+            })
+          : pokemons.map(({ name, number }, i) => {
+              return (
+                <TypeItem
+                  key={name + i}
+                  primaryColor={props.primaryColor}
+                  name={name}
+                  number={number}
+                />
+              );
+            })}
+
+        {props.firstPage && pokemons.length > 5 ? (
           <button
             className="button"
             onClick={() => {

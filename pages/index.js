@@ -17,6 +17,7 @@ export default function Home() {
             type={data.type}
             primaryColor={data.primary}
             secondaryColor={data.secondary}
+            firstPage
           />
         ))}
       </div>
