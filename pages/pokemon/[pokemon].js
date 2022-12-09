@@ -1,33 +1,32 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
-import Type from "../../components/type";
 
 import dataType from "../../public/typeColors";
 
-export default function TypePage({ pokemons }) {
+export default function PokemonInfo() {
   const router = useRouter();
   const data = router.query;
-  const typeObj = dataType.find((el) => el.type === data.type);
 
   return (
-    <div className="teste">
-      {typeObj && (
-        <Type pokemons={pokemons} key={typeObj.type} type={typeObj.type} />
-      )}
+    <div>
+      <h1>Pokémon</h1>
     </div>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = dataType.map((el) => ({
-    params: { type: el.type },
+  const pokemonsList = await new Pokedex().getPokemonsList();
+  const names = pokemonsList.map();
+
+  const paths = pokemonsList.map((el) => ({
+    params: { pokemon: el.result.map() },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps(ctx) {
-  const typePokemons = await new Pokedex().getTypeByName(ctx.params.type);
+  const typePokemons = await new Pokedex().getPokemonByName(ctx.params.name);
 
   return {
     props: {

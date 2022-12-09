@@ -1,9 +1,9 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import dataType from "../public/typeColors";
 import Type from "../components/type";
+import Pokedex from "pokedex-promise-v2";
 
-export default function Home() {
+export default function Home({ types }) {
   return (
     <div>
       <Head>
@@ -11,16 +11,32 @@ export default function Home() {
         <link rel="icon" href="/images/logo-pokeball.png" />
       </Head>
       <div className="App">
-        {dataType.map((data) => (
-          <Type
-            key={data.type}
-            type={data.type}
-            primaryColor={data.primary}
-            secondaryColor={data.secondary}
-            firstPage
-          />
+        {types.map(({ name, pokemons }) => (
+          <Type pokemons={pokemons} key={name} type={name} pokemonsLimit={5} />
         ))}
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const types = await Promise.all(
+    dataType.map(async function ({ type }) {
+      const pokemonType = await new Pokedex().getTypeByName(type);
+      const pokemons = pokemonType.pokemon.map((el) => {
+        const url = el.pokemon.url.split("https://pokeapi.co/api/v2/pokemon/");
+        const number = url[1].slice(0, -1);
+        return { name: el.pokemon.name, number };
+      });
+      return {
+        name: type,
+        pokemons,
+      };
+    })
+  );
+  return {
+    props: {
+      types,
+    },
+  };
 }

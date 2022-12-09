@@ -1,64 +1,43 @@
 import { React, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
+import dataType from "../public/typeColors";
 import TypeItem from "./typeItem";
 import * as Pokedex from "pokeapi-js-wrapper";
 
-export default function Type(props) {
-  const [pokemons, setPokemons] = useState([]);
+export default function Type({ pokemons, ...props }) {
   const router = useRouter();
 
-  async function getPokemons(type) {
-    const typePokemons = await new Pokedex.Pokedex({
-      cacheImages: true,
-    }).getTypeByName(type);
-    return typePokemons.pokemon.map((el) => {
-      const url = el.pokemon.url.split("https://pokeapi.co/api/v2/pokemon/");
-      const number = url[1].slice(0, -1);
-      return { name: el.pokemon.name, number };
-    });
-  }
-
-  useEffect(() => {
-    getPokemons(props.type).then(setPokemons);
-  }, [props.type]);
+  const typeColors = dataType.find((el) => el.type === props.type);
 
   return (
     <div
       className="type-wrapper"
-      style={{ backgroundColor: props.secondaryColor }}
+      style={{ backgroundColor: typeColors.secondary }}
     >
       <p className="type-title">{capitalizeFirstLetter(props.type)}</p>
       <div
         className="title-line"
         style={{
-          borderColor: props.primaryColor,
+          borderColor: typeColors.primary,
         }}
       ></div>
       <div className="pokemon-list">
-        {props.firstPage
-          ? pokemons.slice(0, 5).map(({ name, number }, i) => {
-              return (
-                <TypeItem
-                  key={name + i}
-                  primaryColor={props.primaryColor}
-                  name={name}
-                  number={number}
-                />
-              );
-            })
-          : pokemons.map(({ name, number }, i) => {
-              return (
-                <TypeItem
-                  key={name + i}
-                  primaryColor={props.primaryColor}
-                  name={name}
-                  number={number}
-                />
-              );
-            })}
+        {(props.pokemonsLimit
+          ? pokemons.slice(0, props.pokemonsLimit)
+          : pokemons
+        ).map(({ name, number }, i) => {
+          return (
+            <TypeItem
+              key={name + i}
+              primaryColor={typeColors.primary}
+              name={name}
+              number={number}
+            />
+          );
+        })}
 
-        {props.firstPage && pokemons.length > 5 ? (
+        {props.pokemonsLimit && pokemons.length > props.pokemonsLimit && (
           <button
             className="button"
             onClick={() => {
@@ -69,8 +48,6 @@ export default function Type(props) {
           >
             +
           </button>
-        ) : (
-          ""
         )}
       </div>
     </div>
