@@ -30,7 +30,17 @@ React JS, Next JS
 
 Este projeto foi inspirado no curso de React da Alura. Para incrementar o projeto, decidi usar o Next JS para melhorar o desempenho do site, já que optei por consumir as informações da PokéAPI.
 
-- [Link do Figma](<https://www.figma.com/file/my6CKR5L2w8v4WneaTURQZ/Projeto-Intro-ao-React-(Pok%C3%A9mon)?node-id=196%3A1418&t=xyKOo3WGzdnGabOY-1>)
+## <img src="https://cdn-icons-png.flaticon.com/512/2724/2724885.png" width="20" /> Layout
+
+Layout pode ser encontrado no [Figma](<https://www.figma.com/file/my6CKR5L2w8v4WneaTURQZ/Projeto-Intro-ao-React-(Pok%C3%A9mon)?node-id=196%3A1418&t=xyKOo3WGzdnGabOY-1>)
+
+- Imagens da aplicação:
+  </br>
+  <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-inicial.png" width="500" />
+  </br>
+  <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-incial-2.png" width="500" />
+  </br>
+  <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-tipo.png" width="500" />
 
 </br>
 
