@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Pokémon
 
-## Getting Started
+## <img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" width="20" /> Em andamento <img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" width="20" />
 
-First, run the development server:
+</br>
+
+## Site inspirado na pokédex para exibir informações dos Pokémons.
+
+</br>
+
+## <img src="https://cdn-icons-png.flaticon.com/512/2666/2666505.png" width="20" /> Checklist
+
+- [x] Fazer layout da página inicial, página de um tipo específico
+- [x] Integrar com a PokéAPI
+- [x] Fazer rotas dinâmicas
+- [] Finalizar layout da página de informações de um Pokémon específico
+- [] Finalizar tratamento das informações dos Pokémons
+- [] Desenvolver o campo de busca
+- [] Colocar imagens corretas
+
+</br>
+
+## <img src="https://cdn-icons-png.flaticon.com/512/2276/2276313.png" width="20" /> Tecnologias
+
+React JS, Next JS
+
+</br>
+
+## <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" width="20" /> Inspiração
+
+Este projeto foi inspirado no curso de React da Alura. Para incrementar o projeto, decidi usar o Next JS para melhorar o desempenho do site, já que optei por consumir as informações da PokéAPI.
+
+- [Link do Figma](<https://www.figma.com/file/my6CKR5L2w8v4WneaTURQZ/Projeto-Intro-ao-React-(Pok%C3%A9mon)?node-id=196%3A1418&t=xyKOo3WGzdnGabOY-1>)
+
+</br>
+
+## <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" width="20" /> Executar o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clonar o repositório
+$ git clone https://github.com/anavollu/pokemon-next.git
+
+# Execute o projeto
+$ npm i
+$ npm run dev
+
+# Abra o navegador em http://localhost:3000 para ver o resultado
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## <img src="https://cdn-icons-png.flaticon.com/512/5050/5050273.png" width="20" /> Deploy na Vercel
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Link da aplicação](https://pokemon-next-lake.vercel.app/)
