@@ -1,9 +1,8 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { useRouter } from "next/router";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 import dataType from "../public/typeColors";
 import TypeItem from "./typeItem";
-import * as Pokedex from "pokeapi-js-wrapper";
 
 export default function Type({ pokemons, ...props }) {
   const router = useRouter();
@@ -28,12 +27,21 @@ export default function Type({ pokemons, ...props }) {
           : pokemons
         ).map(({ name, number }, i) => {
           return (
-            <TypeItem
-              key={name + i}
-              primaryColor={typeColors.primary}
-              name={name}
-              number={number}
-            />
+            <button
+              className="pokemon-button"
+              onClick={() => {
+                router.push({
+                  pathname: `/pokemon/${name}`,
+                });
+              }}
+            >
+              <TypeItem
+                key={name + i}
+                primaryColor={typeColors.primary}
+                name={name}
+                number={number}
+              />
+            </button>
           );
         })}
 

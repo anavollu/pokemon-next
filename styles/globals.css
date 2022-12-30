@@ -151,6 +151,11 @@ a {
   flex-wrap: wrap;
 }
 
+.pokemon-button {
+  border: none;
+  background-color: transparent;
+}
+
 .button {
   background-color: #8796EB;
   color: white;
