@@ -154,6 +154,13 @@ a {
 .pokemon-button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.pokemon-button:hover {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.08);
 }
 
 .button {
