@@ -46,11 +46,11 @@ a {
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   box-sizing: border-box;
   width: 644px;
   height: 65px;
-  border: 1px solid #E3E1E1;
+  border: 1px solid #e3e1e1;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
   border-radius: 50px;
   margin-bottom: 54px;
@@ -64,7 +64,7 @@ a {
 }
 
 .input-search {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   width: 567px;
   height: 63px;
   border: none;
@@ -96,7 +96,7 @@ a {
   position: absolute;
   width: 100%;
   height: 124px;
-  background-color: #4F61C8;
+  background-color: #4f61c8;
   align-items: center;
   justify-content: space-between;
   padding-left: 166px;
@@ -115,7 +115,7 @@ a {
 .developed-by {
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* Type */
@@ -129,7 +129,7 @@ a {
 }
 
 .type-title {
-  font-family: 'Prata';
+  font-family: "Prata";
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -164,7 +164,7 @@ a {
 }
 
 .button {
-  background-color: #8796EB;
+  background-color: #8796eb;
   color: white;
   font-size: 20px;
   font-weight: 700;
@@ -176,7 +176,7 @@ a {
 }
 
 .button:hover {
-  background-color: #A5B1F4;
+  background-color: #a5b1f4;
   color: white;
 }
 
@@ -213,7 +213,7 @@ a {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  color: #4F61C8;
+  color: #4f61c8;
 }
 
 .pokemon-number {
@@ -222,4 +222,38 @@ a {
   font-size: 16px;
   line-height: 20px;
   color: #212121;
+}
+
+.box-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 31px;
+  padding-top: 25px;
+  padding-bottom: 108px;
+}
+
+.box-top {
+  width: 1121px;
+  height: 95px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.content {
+  display: flex;
+  width: 1121px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 31px 71px 82px 72px;
+  gap: 64px;
+}
+
+.pokemon-info-wrapper {
+  border: 1px solid black;
+  width: 486px;
+}
+
+.p-info {
+  font-size: 24px;
 }
