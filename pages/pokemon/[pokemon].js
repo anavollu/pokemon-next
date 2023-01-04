@@ -63,12 +63,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(ctx) {
+  // Name and Id
   const { types, id } = await new Pokedex().getPokemonByName(
     ctx.params.pokemon
   );
-  //Pegar os tipos
+
+  // Types
   const arrTypes = types.map((el) => el.type.name);
-  //Pegar as informações de dano de cada tipo
+
   const damageRelations = await Promise.all(
     arrTypes.map(async (type) => {
       const { damage_relations } = await new Pokedex().getTypeByName(type);
@@ -76,7 +78,6 @@ export async function getStaticProps(ctx) {
     })
   );
 
-  //Pegar os tipos de cada dano
   const damageRelationReduce = damageRelations.map((relation) =>
     Object.keys(relation).reduce(
       (acc, curr) => {
@@ -87,9 +88,25 @@ export async function getStaticProps(ctx) {
       { from: new Set(), to: new Set() }
     )
   );
-
   // console.log([...typeNames]);
-  //Separar em weakness e strong against
+
+  // Weakness
+
+  // Strong
+
+  // Evolution
+  const { evolution_chain } = await new Pokedex().getPokemonSpeciesByName(
+    ctx.params.pokemon
+  );
+
+  const url = evolution_chain.url.split(
+    "https://pokeapi.co/api/v2/evolution-chain/"
+  );
+  const evolutionId = url[1].slice(0, -1);
+
+  const evolution = await new Pokedex().getEvolutionChainById(evolutionId);
+  console.log(evolution.chain.evolution_details);
+
   return {
     props: { types: arrTypes, name: ctx.params.pokemon, number: id },
   };
