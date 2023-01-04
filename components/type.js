@@ -29,6 +29,7 @@ export default function Type({ pokemons, ...props }) {
           return (
             <button
               className="pokemon-button"
+              key={`pokemon-button-${name}`}
               onClick={() => {
                 router.push({
                   pathname: `/pokemon/${name}`,
