@@ -19,7 +19,7 @@ export default function Home({ types }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const types = await Promise.all(
     dataType.map(async function ({ type }) {
       const pokemonType = await new Pokedex().getTypeByName(type);
