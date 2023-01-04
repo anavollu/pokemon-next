@@ -9,7 +9,9 @@ export default function Banner() {
   return (
     <div className="banner">
       <div className="logo-search-wrapper">
-        <Image src={logo} alt="Logo" width={320} height={167} />
+        <a href="/">
+          <Image src={logo} alt="Logo" width={320} height={167} />
+        </a>
 
         <div className="search-wrapper">
           <p className="input-label">Search for a Pokémon by name or number</p>
