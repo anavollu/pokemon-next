@@ -18,6 +18,7 @@
 - [ ] Desenvolver o campo de busca
 - [ ] Colocar imagens corretas
 - [ ] Fazer ajustes de CSS e responsividade
+- [ ] Usar regex na função capitalizeFirstLetter
 
 </br>
 
