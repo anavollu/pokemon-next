@@ -2,6 +2,7 @@ import Head from "next/head";
 import dataType from "../public/typeColors";
 import Type from "../components/type";
 import Pokedex from "pokedex-promise-v2";
+import getId from "../utils/getId";
 
 export default function Home({ types }) {
   return (
@@ -24,9 +25,8 @@ export async function getStaticProps() {
     dataType.map(async function ({ type }) {
       const pokemonType = await new Pokedex().getTypeByName(type);
       const pokemons = pokemonType.pokemon.map((el) => {
-        const url = el.pokemon.url.split("https://pokeapi.co/api/v2/pokemon/");
-        const number = url[1].slice(0, -1);
-        return { name: el.pokemon.name, number };
+        const id = getId(el.pokemon.url, "https://pokeapi.co/api/v2/pokemon/");
+        return { name: el.pokemon.name, number: id };
       });
       return {
         name: type,

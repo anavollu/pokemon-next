@@ -6,6 +6,7 @@ import image from "../../public/images/logo-pokeball.png";
 
 import dataType from "../../public/typeColors";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import getId from "../../utils/getId";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
@@ -99,13 +100,13 @@ export async function getStaticProps(ctx) {
     ctx.params.pokemon
   );
 
-  const url = evolution_chain.url.split(
+  const evolutionId = getId(
+    evolution_chain.url,
     "https://pokeapi.co/api/v2/evolution-chain/"
   );
-  const evolutionId = url[1].slice(0, -1);
 
   const evolution = await new Pokedex().getEvolutionChainById(evolutionId);
-  console.log(evolution.chain.evolution_details);
+  console.log(evolution.chain.evolves_to);
 
   return {
     props: { types: arrTypes, name: ctx.params.pokemon, number: id },

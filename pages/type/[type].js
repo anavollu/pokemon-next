@@ -3,6 +3,7 @@ import Pokedex from "pokedex-promise-v2";
 import Type from "../../components/type";
 
 import dataType from "../../public/typeColors";
+import getId from "../../utils/getId";
 
 export default function TypePage({ pokemons }) {
   const router = useRouter();
@@ -32,9 +33,8 @@ export async function getStaticProps(ctx) {
   return {
     props: {
       pokemons: typePokemons.pokemon.map((el) => {
-        const url = el.pokemon.url.split("https://pokeapi.co/api/v2/pokemon/");
-        const number = url[1].slice(0, -1);
-        return { name: el.pokemon.name, number };
+        const id = getId(el.pokemon.url, "https://pokeapi.co/api/v2/pokemon/");
+        return { name: el.pokemon.name, number: id };
       }),
     },
   };
