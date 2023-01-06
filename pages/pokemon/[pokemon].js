@@ -1,12 +1,11 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
-
+import Evolution from "../../components/evolution";
 import image from "../../public/images/logo-pokeball.png";
-
-import dataType from "../../public/typeColors";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 import getId from "../../utils/getId";
+import dataType from "../../public/typeColors";
+import Image from "next/image";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
@@ -41,9 +40,10 @@ export default function PokemonInfo(props) {
           </div>
           <div className="pokemon-evolution">
             <h1 style={{ textAlign: "center", color: "#4F61C8" }}>Evolution</h1>
-            <div className="evolutions">
-              <Image src={image} alt="Imagem" width={120} height={104} />
-              <p>{props.evolution.map(capitalizeFirstLetter).join(", ")}</p>
+            <div className="evolution-wrapper">
+              {props.evolution.map((pokemonName) => (
+                <Evolution name={pokemonName} />
+              ))}
             </div>
           </div>
         </div>

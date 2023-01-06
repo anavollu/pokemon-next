@@ -257,3 +257,16 @@ a {
 .p-info {
   font-size: 24px;
 }
+
+/* Pokémon Evolution */
+
+.evolution-wrapper {
+  display: flex;
+  gap: 21px;
+}
+
+.evolution {
+  flex-direction: column;
+  text-align: center;
+  font-size: 16px;
+}
