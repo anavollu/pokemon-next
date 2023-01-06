@@ -263,6 +263,7 @@ a {
 .evolution-wrapper {
   display: flex;
   gap: 21px;
+  justify-content: center;
 }
 
 .evolution {
