@@ -42,17 +42,17 @@ export default function PokemonInfo(props) {
               <h1 style={{ textAlign: "center", color: "#4F61C8" }}>
                 Evolution
               </h1>
-              <div className="evolution-wrapper">
+              <div className="evolution-list">
                 {props.evolution.map((pokemonName, i) => (
-                  <>
-                    <Evolution
-                      key={`evolution_${pokemonName}`}
-                      name={pokemonName}
-                    />
-                    {props.evolution.length < i - 1 && (
-                      <p key={`evolution_${pokemonName}_${i}`}>a</p>
+                  <div
+                    className="evolution-wrapper"
+                    key={`evolution_${pokemonName}`}
+                  >
+                    <Evolution name={pokemonName} />
+                    {props.evolution.length - 1 != i && (
+                      <p className="evolution-separator">&gt;</p>
                     )}
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

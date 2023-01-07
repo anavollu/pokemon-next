@@ -258,14 +258,26 @@ a {
 
 /* Pokémon Evolution */
 
-.evolution-wrapper {
+.evolution-list {
   display: flex;
   gap: 21px;
   justify-content: center;
 }
 
+.evolution-wrapper {
+  display: flex;
+  gap: 1.2em;
+}
+
 .evolution {
+  display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 16px;
+}
+
+.evolution-separator {
+  color: #4f61c8;
+  font-weight: 600;
+  font-size: 28px;
 }
