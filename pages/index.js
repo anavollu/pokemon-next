@@ -1,8 +1,8 @@
 import Head from "next/head";
 import dataType from "../public/typeColors";
-import Type from "../components/type";
+import Type from "../src/components/type";
+import getId from "../src/utils/getId";
 import Pokedex from "pokedex-promise-v2";
-import getId from "../utils/getId";
 
 export default function Home({ types }) {
   return (

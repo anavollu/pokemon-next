@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
-import Evolution from "../../components/evolution";
 import image from "../../public/images/logo-pokeball.png";
-import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
-import getId from "../../utils/getId";
-import dataType from "../../public/typeColors";
 import Image from "next/image";
+import getEvolutions from "../../src/services/pokemon/getEvolutions";
+import Evolution from "../../src/components/evolution";
+import capitalizeFirstLetter from "../../src/utils/capitalizeFirstLetter";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
@@ -38,14 +37,26 @@ export default function PokemonInfo(props) {
               <strong>Weakness against:</strong>{" "}
             </p>
           </div>
-          <div className="pokemon-evolution">
-            <h1 style={{ textAlign: "center", color: "#4F61C8" }}>Evolution</h1>
-            <div className="evolution-wrapper">
-              {props.evolution.map((pokemonName) => (
-                <Evolution name={pokemonName} />
-              ))}
+          {props.evolution && (
+            <div className="pokemon-evolution">
+              <h1 style={{ textAlign: "center", color: "#4F61C8" }}>
+                Evolution
+              </h1>
+              <div className="evolution-wrapper">
+                {props.evolution.map((pokemonName, i) => (
+                  <>
+                    <Evolution
+                      key={`evolution_${pokemonName}`}
+                      name={pokemonName}
+                    />
+                    {props.evolution.length < i - 1 && (
+                      <p key={`evolution_${pokemonName}_${i}`}>a</p>
+                    )}
+                  </>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
@@ -94,31 +105,7 @@ export async function getStaticProps(ctx) {
 
   // Strong
 
-  // Evolution
-  const { evolution_chain } = await new Pokedex().getPokemonSpeciesByName(
-    ctx.params.pokemon
-  );
-
-  const evolutionId = getId(
-    evolution_chain.url,
-    "https://pokeapi.co/api/v2/evolution-chain/"
-  );
-
-  const { chain } = await new Pokedex().getEvolutionChainById(evolutionId);
-
-  function evolutionChain(chain) {
-    if (!chain.species.name) throw new Error("Pokémon has no evolution chain");
-    let evolutionArr = [];
-    evolutionArr.push(chain.species.name);
-    let aux = chain.evolves_to[0];
-    while (aux) {
-      evolutionArr.push(aux.species.name);
-      aux = aux.evolves_to[0];
-    }
-    return evolutionArr;
-  }
-
-  const evolution = evolutionChain(chain);
+  const evolution = await getEvolutions(ctx.params.pokemon);
 
   return {
     props: { types: arrTypes, name: ctx.params.pokemon, number: id, evolution },

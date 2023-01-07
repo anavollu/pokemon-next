@@ -1,8 +1,8 @@
 import { React } from "react";
 import { useRouter } from "next/router";
-import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
-import dataType from "../public/typeColors";
+import dataType from "../../public/typeColors";
 import TypeItem from "./typeItem";
+import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 
 export default function Type({ pokemons, ...props }) {
   const router = useRouter();
