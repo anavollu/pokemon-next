@@ -5,8 +5,8 @@ export default async function getEvolutions(pokemon) {
   const { evolution_chain, err } = await new Pokedex()
     .getPokemonSpeciesByName(pokemon)
     .catch((err) => ({ err }));
-
-  if (err) return null;
+  // Todo: rever casos de pokemon com evolution_chain = null (kleavor, overqwil, sneasler, ursaluna, wyrdeer)
+  if (err || evolution_chain == null) return null;
 
   const evolutionId = getId(
     evolution_chain.url,
