@@ -13,12 +13,13 @@
 - [x] Fazer layout da página inicial, página de um tipo específico
 - [x] Integrar com a PokéAPI
 - [x] Fazer rotas dinâmicas
-- [ ] Finalizar layout da página de informações de um Pokémon específico
-- [ ] Finalizar tratamento das informações dos Pokémons
+- [ ] Finalizar layout da página de informações de um Pokémon específico (símbolo > em Evolution)
+- [ ] Finalizar tratamento das informações dos Pokémons (strong and weakness)
 - [ ] Desenvolver o campo de busca
 - [ ] Colocar imagens corretas
 - [ ] Fazer ajustes de CSS e responsividade
 - [ ] Usar regex na função capitalizeFirstLetter
+- [ ] Arrumar evolution_chain null de 5 Pokémons
 
 </br>
 
