@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
-import Type from "../../components/type";
 
 import dataType from "../../public/typeColors";
-import getId from "../../utils/getId";
+import Type from "../../src/components/type";
+import getId from "../../src/utils/getId";
 
 export default function TypePage({ pokemons }) {
   const router = useRouter();
