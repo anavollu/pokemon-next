@@ -1,6 +1,6 @@
 # Projeto Pokémon
 
-## <img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" width="20" /> Em andamento <img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" width="20" />
+## <img src="https://cdn-icons-png.flaticon.com/24/595/595067.png" width="20" /> Em andamento <img src="https://cdn-icons-png.flaticon.com/24/595/595067.png" width="20" />
 
 </br>
 
@@ -8,12 +8,12 @@
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/2666/2666505.png" width="20" /> Checklist
+## <img src="https://cdn-icons-png.flaticon.com/24/2666/2666505.png" width="20" /> Checklist
 
 - [x] Fazer layout da página inicial, página de um tipo específico
 - [x] Integrar com a PokéAPI
 - [x] Fazer rotas dinâmicas
-- [ ] Finalizar layout da página de informações de um Pokémon específico (símbolo > em Evolution)
+- [x] Finalizar layout da página de informações de um Pokémon específico
 - [ ] Finalizar tratamento das informações dos Pokémons (strong and weakness)
 - [ ] Desenvolver o campo de busca
 - [ ] Colocar imagens corretas
@@ -24,24 +24,24 @@
 
 ## <img src="https://cdn-icons-png.flaticon.com/24/3095/3095113.png" width="20" /> Bugs
 
+- [x] Trocar no readme todos os sources dos ícones para tamanho menor
 - [ ] Arrumar evolution_chain null de 5 Pokémons
-- [ ] Trocar no readme todos os sources dos ícones para tamanho menor
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/2276/2276313.png" width="20" /> Tecnologias
+## <img src="https://cdn-icons-png.flaticon.com/24/2276/2276313.png" width="20" /> Tecnologias
 
 React JS, Next JS
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" width="20" /> Inspiração
+## <img src="https://cdn-icons-png.flaticon.com/24/427/427735.png" width="20" /> Inspiração
 
 Este projeto foi inspirado no curso de React da Alura. Para incrementar o projeto, decidi usar o Next JS para melhorar o desempenho do site, já que optei por consumir as informações da PokéAPI.
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/2724/2724885.png" width="20" /> Layout
+## <img src="https://cdn-icons-png.flaticon.com/24/2724/2724885.png" width="20" /> Layout
 
 Layout pode ser encontrado no [Figma](<https://www.figma.com/file/my6CKR5L2w8v4WneaTURQZ/Projeto-Intro-ao-React-(Pok%C3%A9mon)?node-id=196%3A1418&t=xyKOo3WGzdnGabOY-1>)
 
@@ -55,7 +55,7 @@ Layout pode ser encontrado no [Figma](<https://www.figma.com/file/my6CKR5L2w8v4W
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" width="20" /> Executar o projeto
+## <img src="https://cdn-icons-png.flaticon.com/24/6062/6062646.png" width="20" /> Executar o projeto
 
 ```bash
 # Clonar o repositório
@@ -70,6 +70,6 @@ $ npm run dev
 
 </br>
 
-## <img src="https://cdn-icons-png.flaticon.com/512/5050/5050273.png" width="20" /> Deploy na Vercel
+## <img src="https://cdn-icons-png.flaticon.com/24/5050/5050273.png" width="20" /> Deploy na Vercel
 
 - [Link da aplicação](https://pokemon-next-lake.vercel.app/)
