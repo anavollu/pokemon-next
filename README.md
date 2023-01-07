@@ -19,7 +19,13 @@
 - [ ] Colocar imagens corretas
 - [ ] Fazer ajustes de CSS e responsividade
 - [ ] Usar regex na função capitalizeFirstLetter
+
+</br>
+
+## <img src="https://cdn-icons-png.flaticon.com/24/3095/3095113.png" width="20" /> Bugs
+
 - [ ] Arrumar evolution_chain null de 5 Pokémons
+- [ ] Trocar no readme todos os sources dos ícones para tamanho menor
 
 </br>
 
