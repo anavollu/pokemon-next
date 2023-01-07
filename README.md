@@ -52,6 +52,8 @@ Layout pode ser encontrado no [Figma](<https://www.figma.com/file/my6CKR5L2w8v4W
   <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-incial-2.png" width="500" />
   </br>
   <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-tipo.png" width="500" />
+  </br>
+  <img src="https://raw.githubusercontent.com/anavollu/pokemon-next/main/prints/pokemon-next-pagina-pokemon.png" width="500" />
 
 </br>
 
