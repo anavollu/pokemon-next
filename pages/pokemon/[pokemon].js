@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
-import image from "../../public/images/logo-pokeball.png";
-import Image from "next/image";
 import getEvolutions from "../../src/services/pokemon/getEvolutions";
 import Evolution from "../../src/components/evolution";
 import capitalizeFirstLetter from "../../src/utils/capitalizeFirstLetter";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
+  const pokemonNumber = String(props.number).padStart(3, "0");
+  console.log(props.evolution);
   return (
     <div
       className="box-wrapper"
@@ -16,7 +16,11 @@ export default function PokemonInfo(props) {
       <div className="box-top" style={{ backgroundColor: "#57C278" }}></div>
       <div className="content">
         <div className="pokemon-image">
-          <Image src={image} alt="Imagem" width={428} />
+          <img
+            src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${pokemonNumber}.png`}
+            alt="Foto do Pokémon"
+            width={428}
+          />
         </div>
         <div className="pokemon-info-wrapper">
           <div className="pokemon-info">
@@ -24,7 +28,7 @@ export default function PokemonInfo(props) {
               {capitalizeFirstLetter(props.name)}
             </h1>
             <p className="p-info">
-              <strong>Number:</strong> #{props.number}
+              <strong>Number:</strong> #{pokemonNumber}
             </p>
             <p className="p-info">
               <strong>Types: </strong>
@@ -48,7 +52,7 @@ export default function PokemonInfo(props) {
                     className="evolution-wrapper"
                     key={`evolution_${pokemonName}`}
                   >
-                    <Evolution name={pokemonName} />
+                    <Evolution name={pokemonName} number={pokemonNumber} />
                     {props.evolution.length - 1 != i && (
                       <p className="evolution-separator">&gt;</p>
                     )}
@@ -100,6 +104,7 @@ export async function getStaticProps(ctx) {
     )
   );
   // console.log([...typeNames]);
+  console.log(damageRelationReduce);
 
   // Weakness
 
