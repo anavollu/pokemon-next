@@ -3,11 +3,11 @@ import Pokedex from "pokedex-promise-v2";
 import getEvolutions from "../../src/services/pokemon/getEvolutions";
 import Evolution from "../../src/components/evolution";
 import capitalizeFirstLetter from "../../src/utils/capitalizeFirstLetter";
+import getImage from "../../src/utils/getImage";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
   const pokemonNumber = String(props.number).padStart(3, "0");
-  console.log(props.evolution);
   return (
     <div
       className="box-wrapper"
@@ -16,11 +16,7 @@ export default function PokemonInfo(props) {
       <div className="box-top" style={{ backgroundColor: "#57C278" }}></div>
       <div className="content">
         <div className="pokemon-image">
-          <img
-            src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${pokemonNumber}.png`}
-            alt="Foto do Pokémon"
-            width={428}
-          />
+          <img src={getImage(props.number)} alt="Foto do Pokémon" width={428} />
         </div>
         <div className="pokemon-info-wrapper">
           <div className="pokemon-info">
