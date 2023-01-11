@@ -1,5 +1,7 @@
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.replace(/\b[a-z](?=[a-z])/g, function (letter) {
+    return letter.toUpperCase();
+  });
 }
 
 export default capitalizeFirstLetter;
