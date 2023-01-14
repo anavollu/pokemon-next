@@ -4,6 +4,7 @@ import getEvolutions from "../../src/services/pokemon/getEvolutions";
 import Evolution from "../../src/components/evolution";
 import capitalizeFirstLetter from "../../src/utils/capitalizeFirstLetter";
 import getImage from "../../src/utils/getImage";
+import typeColorMap from "../../public/typeColors";
 
 export default function PokemonInfo(props) {
   const router = useRouter();
@@ -11,9 +12,12 @@ export default function PokemonInfo(props) {
   return (
     <div
       className="box-wrapper"
-      style={{ backgroundColor: "rgba(0, 200, 111, 0.15)" }}
+      style={{ backgroundColor: props.color.secondary }}
     >
-      <div className="box-top" style={{ backgroundColor: "#57C278" }}></div>
+      <div
+        className="box-top"
+        style={{ backgroundColor: props.color.primary }}
+      ></div>
       <div className="content">
         <div className="pokemon-image">
           <img src={getImage(props.number)} alt="Foto do Pokémon" width={428} />
@@ -82,6 +86,9 @@ export async function getStaticProps(ctx) {
   // Types
   const arrTypes = types.map((el) => el.type.name);
 
+  // Colors
+  const color = typeColorMap[arrTypes[0]];
+
   const damageRelations = await Promise.all(
     arrTypes.map(async (type) => {
       const { damage_relations } = await new Pokedex().getTypeByName(type);
@@ -100,7 +107,7 @@ export async function getStaticProps(ctx) {
     )
   );
   // console.log([...typeNames]);
-  console.log(damageRelationReduce);
+  // console.log(damageRelationReduce);
 
   // Weakness
 
@@ -109,6 +116,12 @@ export async function getStaticProps(ctx) {
   const evolution = await getEvolutions(ctx.params.pokemon);
 
   return {
-    props: { types: arrTypes, name: ctx.params.pokemon, number: id, evolution },
+    props: {
+      types: arrTypes,
+      name: ctx.params.pokemon,
+      number: id,
+      evolution,
+      color,
+    },
   };
 }

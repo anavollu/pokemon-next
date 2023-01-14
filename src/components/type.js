@@ -1,13 +1,11 @@
 import { React } from "react";
 import { useRouter } from "next/router";
-import dataType from "../../public/typeColors";
 import TypeItem from "./typeItem";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 
 export default function Type({ pokemons, ...props }) {
   const router = useRouter();
-
-  const typeColors = dataType.find((el) => el.type === props.type);
+  const typeColors = pokemons.find((el) => el.type === props.type);
 
   return (
     <div
@@ -39,6 +37,7 @@ export default function Type({ pokemons, ...props }) {
               <TypeItem
                 key={name + i}
                 primaryColor={typeColors.primary}
+                secondaryColor={typeColors.secondary}
                 name={name}
                 number={number}
               />

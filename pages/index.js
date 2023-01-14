@@ -1,5 +1,5 @@
 import Head from "next/head";
-import dataType from "../public/typeColors";
+import typeColorMap from "../public/typeColors";
 import Type from "../src/components/type";
 import getId from "../src/utils/getId";
 import Pokedex from "pokedex-promise-v2";
@@ -22,11 +22,11 @@ export default function Home({ types }) {
 
 export async function getStaticProps() {
   const types = await Promise.all(
-    dataType.map(async function ({ type }) {
+    Object.entries(typeColorMap).map(async ([type, { primary, secondary }]) => {
       const pokemonType = await new Pokedex().getTypeByName(type);
       const pokemons = pokemonType.pokemon.map((el) => {
         const id = getId(el.pokemon.url, "https://pokeapi.co/api/v2/pokemon/");
-        return { name: el.pokemon.name, number: id };
+        return { name: el.pokemon.name, number: id, primary, secondary, type };
       });
       return {
         name: type,
@@ -34,6 +34,7 @@ export async function getStaticProps() {
       };
     })
   );
+
   return {
     props: {
       types,
