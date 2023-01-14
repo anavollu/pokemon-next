@@ -14,20 +14,20 @@
 - [x] Integrar com a PokéAPI
 - [x] Fazer rotas dinâmicas
 - [x] Finalizar layout da página de informações de um Pokémon específico
+- [x] Usar regex na função capitalizeFirstLetter
+- [ ] Colocar imagens corretas (falta alternative Forms)
 - [ ] Finalizar tratamento das informações dos Pokémons (strong and weakness)
 - [ ] Desenvolver o campo de busca
-- [ ] Colocar imagens corretas
 - [ ] Fazer ajustes de CSS e responsividade
-- [ ] Usar regex na função capitalizeFirstLetter
 
 </br>
 
 ## <img src="https://cdn-icons-png.flaticon.com/24/3095/3095113.png" width="20" /> Bugs
 
 - [x] Trocar no readme todos os sources dos ícones para tamanho menor
+- [x] Arrumar backgroundColor do typePokemon para cada tipo
 - [ ] Arrumar evolution_chain null de 5 Pokémons
 - [ ] Arrumar imagem dos pokémons com id #10000+ e evolutions
-- [ ] Arrumar backgroundColor do typePokemon para cada tipo
 
 </br>
 
