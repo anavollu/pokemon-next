@@ -15,7 +15,7 @@
 - [x] Fazer rotas dinâmicas
 - [x] Finalizar layout da página de informações de um Pokémon específico
 - [x] Usar regex na função capitalizeFirstLetter
-- [ ] Colocar imagens corretas (falta alternative Forms)
+- [x] Colocar imagens corretas
 - [ ] Finalizar tratamento das informações dos Pokémons (strong and weakness)
 - [ ] Desenvolver o campo de busca
 - [ ] Fazer ajustes de CSS e responsividade
