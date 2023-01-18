@@ -1,22 +1,21 @@
-import { React } from "react";
 import { useRouter } from "next/router";
 import TypeItem from "./typeItem";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
+import { getColorByType } from "../../public/typeColors";
 
-export default function Type({ pokemons, ...props }) {
+export default function Type({ pokemons, type, ...props }) {
   const router = useRouter();
-  const typeColors = pokemons.find((el) => el.type === props.type);
+
+  const { primary: primaryColor, secondary: secondaryColor } =
+    getColorByType(type);
 
   return (
-    <div
-      className="type-wrapper"
-      style={{ backgroundColor: typeColors.secondary }}
-    >
-      <p className="type-title">{capitalizeFirstLetter(props.type)}</p>
+    <div className="type-wrapper" style={{ backgroundColor: secondaryColor }}>
+      <p className="type-title">{capitalizeFirstLetter(type)}</p>
       <div
         className="title-line"
         style={{
-          borderColor: typeColors.primary,
+          borderColor: primaryColor,
         }}
       ></div>
       <div className="pokemon-list">
@@ -36,8 +35,8 @@ export default function Type({ pokemons, ...props }) {
             >
               <TypeItem
                 key={name + i}
-                primaryColor={typeColors.primary}
-                secondaryColor={typeColors.secondary}
+                primaryColor={primaryColor}
+                secondaryColor={secondaryColor}
                 name={name}
                 number={number}
               />
@@ -50,7 +49,7 @@ export default function Type({ pokemons, ...props }) {
             className="button"
             onClick={() => {
               router.push({
-                pathname: `/type/${props.type}`,
+                pathname: `/type/${type}`,
               });
             }}
           >

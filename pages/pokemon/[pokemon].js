@@ -1,22 +1,25 @@
-import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
 import getEvolutions from "../../src/services/pokemon/getEvolutions";
 import Evolution from "../../src/components/evolution";
 import capitalizeFirstLetter from "../../src/utils/capitalizeFirstLetter";
 import getImage from "../../src/utils/getImage";
-import typeColorMap from "../../public/typeColors";
+import { getColorByType } from "../../public/typeColors";
 
 export default function PokemonInfo(props) {
-  const router = useRouter();
   const pokemonNumber = String(props.number).padStart(3, "0");
+
   return (
     <div
       className="box-wrapper"
-      style={{ backgroundColor: props.color.secondary }}
+      style={{
+        backgroundColor: props.color.secondary,
+      }}
     >
       <div
         className="box-top"
-        style={{ backgroundColor: props.color.primary }}
+        style={{
+          backgroundColor: props.color.primary,
+        }}
       ></div>
       <div className="content">
         <div className="pokemon-image">
@@ -87,7 +90,7 @@ export async function getStaticProps(ctx) {
   const arrTypes = types.map((el) => el.type.name);
 
   // Colors
-  const color = typeColorMap[arrTypes[0]];
+  const color = getColorByType(arrTypes[0]);
 
   const damageRelations = await Promise.all(
     arrTypes.map(async (type) => {

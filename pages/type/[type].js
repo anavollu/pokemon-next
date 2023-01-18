@@ -1,27 +1,24 @@
 import { useRouter } from "next/router";
 import Pokedex from "pokedex-promise-v2";
 
-import dataType from "../../public/typeColors";
+import typeColorsMap from "../../public/typeColors";
 import Type from "../../src/components/type";
 import getId from "../../src/utils/getId";
 
 export default function TypePage({ pokemons }) {
   const router = useRouter();
-  const data = router.query;
-  const typeObj = dataType.find((el) => el.type === data.type);
+  const { type } = router.query;
 
   return (
     <div className="teste">
-      {typeObj && (
-        <Type pokemons={pokemons} key={typeObj.type} type={typeObj.type} />
-      )}
+      {type && <Type pokemons={pokemons} key={type} type={type} />}
     </div>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = dataType.map((el) => ({
-    params: { type: el.type },
+  const paths = Object.keys(typeColorsMap).map((el) => ({
+    params: { type: el },
   }));
 
   return { paths, fallback: false };

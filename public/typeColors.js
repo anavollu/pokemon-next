@@ -70,3 +70,13 @@ const typeColorMap = {
 };
 
 export default typeColorMap;
+
+export function getColorByType(type) {
+  const color = typeColorMap[type];
+  if (color) {
+    return color;
+  }
+  console.warn(`Type not mapped: ${type}`);
+
+  return { primary: "#5CB1FF", secondary: "#D2EAFF" };
+}
