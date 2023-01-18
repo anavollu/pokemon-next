@@ -1,12 +1,26 @@
+import axios from "axios";
 import Pokedex from "pokedex-promise-v2";
 import getId from "../../utils/getId";
 
-export default async function getEvolutions(pokemon) {
+export default async function getEvolutions(pokemonName) {
   const { evolution_chain, err } = await new Pokedex()
-    .getPokemonSpeciesByName(pokemon)
+    .getPokemonSpeciesByName(pokemonName)
     .catch((err) => ({ err }));
-  // Todo: rever casos de pokemon com evolution_chain = null (kleavor, overqwil, sneasler, ursaluna, wyrdeer)
-  if (err || evolution_chain == null) return null;
+  if (err) return null;
+  if (evolution_chain == null) {
+    const pokemonsWithEvoNull = [
+      "kleavor",
+      "overqwil",
+      "sneasler",
+      "ursaluna",
+      "wyrdeer",
+    ];
+    if (pokemonsWithEvoNull.find((name) => name == pokemonName)) {
+      return await getPokemonWithEvoNull(pokemonName);
+    } else {
+      return null;
+    }
+  }
 
   const evolutionId = getId(
     evolution_chain.url,
@@ -28,4 +42,15 @@ export default async function getEvolutions(pokemon) {
   }
 
   return evolutionChain(chain);
+}
+
+async function getPokemonWithEvoNull(pokemonName) {
+  try {
+    const response = await axios.get(
+      `https://pokeapi.glitch.me/v1/pokemon/${pokemonName}`
+    );
+    return response;
+  } catch (error) {
+    return error;
+  }
 }
