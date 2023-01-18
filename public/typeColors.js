@@ -67,6 +67,10 @@ const typeColorMap = {
     primary: "#5CB1FF",
     secondary: "#D2EAFF",
   },
+  dark: {
+    primary: "#5B6772",
+    secondary: "#DDE8F2",
+  },
 };
 
 export default typeColorMap;
