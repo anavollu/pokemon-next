@@ -2,7 +2,6 @@ import Head from "next/head";
 import typeColorMap from "../public/typeColors";
 import getId from "../src/utils/getId";
 import Pokedex from "pokedex-promise-v2";
-import React from "react";
 import Type from "../src/components/type";
 
 export default function Home({ types }) {

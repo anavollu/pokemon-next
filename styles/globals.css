@@ -44,6 +44,7 @@ a {
 }
 
 .search-bar {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #f2f2f2;
@@ -73,6 +74,33 @@ a {
   font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.input-search-list {
+  position: absolute;
+  width: 100%;
+  top: 65px;
+  max-height: 200px;
+  border-radius: 0 0 10px 10px;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  background-color: white;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.input-search-value {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.input-search-value:hover {
+  background-color: lightgray;
 }
 
 .search-icon {

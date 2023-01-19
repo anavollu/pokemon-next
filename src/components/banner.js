@@ -1,9 +1,8 @@
 import { React } from "react";
 import Image from "next/image";
-
 import logo from "/public/images/logo.svg";
-import searchIcon from "/public/images/search-icon.svg";
 import pokemonsImage from "/public/images/pokemons-banner.svg";
+import SearchBar from "./searchBar";
 
 export default function Banner() {
   return (
@@ -12,20 +11,7 @@ export default function Banner() {
         <a href="/">
           <Image src={logo} alt="Logo" width={320} height={167} />
         </a>
-
-        <div className="search-wrapper">
-          <p className="input-label">Search for a Pokémon by name or number</p>
-          <div className="search-bar">
-            <input className="input-search" type="search"></input>
-            <Image
-              className="search-icon"
-              src={searchIcon}
-              alt="Botão de pesquisar"
-              width="auto"
-              height="auto"
-            />
-          </div>
-        </div>
+        <SearchBar />
       </div>
 
       <Image
