@@ -16,8 +16,8 @@
 - [x] Finalizar layout da página de informações de um Pokémon específico
 - [x] Usar regex na função capitalizeFirstLetter
 - [x] Colocar imagens corretas
+- [x] Desenvolver o campo de busca
 - [ ] Finalizar tratamento das informações dos Pokémons (strong and weakness)
-- [ ] Desenvolver o campo de busca
 - [ ] Fazer ajustes de CSS e responsividade
 
 </br>
