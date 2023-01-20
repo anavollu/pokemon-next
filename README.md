@@ -27,7 +27,7 @@
 - [x] Trocar no readme todos os sources dos ícones para tamanho menor
 - [x] Arrumar backgroundColor do typePokemon para cada tipo
 - [x] Arrumar evolution_chain null de 5 Pokémons
-- [ ] Arrumar imagem das evoluções na página de Pokémon
+- [x] Arrumar imagem das evoluções na página de Pokémon
 - [ ] Arrumar imagem dos pokémons com id #10000+
 
 </br>

@@ -32,10 +32,18 @@ export default async function getEvolutions(pokemonName) {
   function evolutionChain(chain) {
     if (!chain.species.name) throw new Error("Pokémon has no evolution chain");
     let evolutionArr = [];
-    evolutionArr.push(chain.species.name);
+    chain.species.url = getId(
+      chain.species.url,
+      "https://pokeapi.co/api/v2/pokemon-species/"
+    );
+    evolutionArr.push(chain.species);
     let aux = chain.evolves_to[0];
     while (aux) {
-      evolutionArr.push(aux.species.name);
+      aux.species.url = getId(
+        aux.species.url,
+        "https://pokeapi.co/api/v2/pokemon-species/"
+      );
+      evolutionArr.push(aux.species);
       aux = aux.evolves_to[0];
     }
     return evolutionArr;

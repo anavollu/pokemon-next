@@ -50,17 +50,22 @@ export default function PokemonInfo(props) {
                 Evolution
               </h1>
               <div className="evolution-list">
-                {props.evolution.map((pokemonName, i) => (
-                  <div
-                    className="evolution-wrapper"
-                    key={`evolution_${pokemonName}`}
-                  >
-                    <Evolution name={pokemonName} number={pokemonNumber} />
-                    {props.evolution.length - 1 != i && (
-                      <p className="evolution-separator">&gt;</p>
-                    )}
-                  </div>
-                ))}
+                {props.evolution.map(({ name, url }, i) => {
+                  return (
+                    <div
+                      className="evolution-wrapper"
+                      key={`evolution_${name}`}
+                    >
+                      <Evolution
+                        name={name}
+                        number={String(url).padStart(3, "0")}
+                      />
+                      {Object.keys(props.evolution).length - 1 != i && (
+                        <p className="evolution-separator">&gt;</p>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
