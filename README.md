@@ -28,6 +28,7 @@
 - [x] Arrumar backgroundColor do typePokemon para cada tipo
 - [x] Arrumar evolution_chain null de 5 Pokémons
 - [x] Arrumar imagem das evoluções na página de Pokémon
+- [ ] Arrumar multiline evolution (ex.: Eevee evolution)
 - [ ] Arrumar imagem dos pokémons com id #10000+
 
 </br>
